@@ -16,11 +16,11 @@
 ### Example
 
 ```html
-<script src="https://raw.githubusercontent.com/upcecconnect/upc-pay-by-bank/refs/heads/main/upc-pay-by-bank.js"></script>
+<script src="https://upcecconnect.github.io/upc-pay-by-bank/upc-pay-by-bank.js"></script>
 ```
 Or download and use file directly
 
-https://github.com/upcecconnect/upc-pay-by-bank/blob/main/upc-pay-by-bank.js
+https://upcecconnect.github.io/upc-pay-by-bank/upc-pay-by-bank.js
 
 ```js
 if (window.UPCPayByBank) {
