@@ -22,15 +22,23 @@ export declare namespace NUPCPayByBank {
         readonly sessionData?: string | undefined;
         readonly signature: string;
         readonly totalAmountCents: number;
-        readonly url?: string | undefined;
+        readonly url?: string;
     }
     export type GetPaymentPropsFunction = () => PaymentProps;
     export type CallbackFunction = () => void;
+    export interface BankInfo {
+        code: string;
+        iconUrl: string;
+        titleI18nKey: string;
+        logoUrl: string;
+        isFavorite: boolean;
+    }
     export interface ButtonProps {
         variant: Variant;
         locale: Locale;
         wrapperSelector: string;
         mode: PaymentMode;
+        lastBank?: BankInfo;
     }
     export interface PayByBankProps {
         buttonProps: ButtonProps;
@@ -47,9 +55,14 @@ declare class UPCPayByBank implements NUPCPayByBank.PayByBank {
     readonly callback: NUPCPayByBank.CallbackFunction | undefined;
     constructor(props: NUPCPayByBank.PayByBankProps);
     private getButtonVariant;
+    private messageListener;
+    private isValidBankInfo;
     private getButton;
     private setButtonInnerHTML;
     private addButton;
+    private loadInterFont;
+    private createStyle;
+    private createWrapper;
     private getInputEl;
     private onButtonClick;
 }
